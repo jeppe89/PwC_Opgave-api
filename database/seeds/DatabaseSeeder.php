@@ -62,7 +62,7 @@ class DatabaseSeeder extends Seeder
             'phone' => '12 34 56 78'
         ]);
         $customerUser->assignRole('Customer');
-        
+
 
         // Populate events
         App\Event::create([
