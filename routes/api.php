@@ -12,7 +12,7 @@
 */
 
 if (env('APP_ENV') === 'prod') {
-    URL::forceSchema('https');
+    URL::forceScheme('https');
 }
     /*
      *  EVENT ROUTES
