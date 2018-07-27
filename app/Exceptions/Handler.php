@@ -143,8 +143,8 @@ class Handler extends ExceptionHandler
         $document = new Document;
         $document->setErrors($errors);
 
-        return response()->json($document, $status);
-        //return parent::render($request, $exception);
+        //return response()->json($document, $status);
+        return parent::render($request, $exception);
     }
 
     private function errorResponse(string $title, string $detail, string $source, int $status = null)
