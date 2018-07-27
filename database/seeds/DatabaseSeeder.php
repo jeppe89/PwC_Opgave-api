@@ -49,7 +49,7 @@ class DatabaseSeeder extends Seeder
         $adminUser = App\User::create([
            'name' => 'Admin',
            'email' => 'admin',
-           'password' => Hash::make('admin'),
+           'password' => Hash::make('admin@pwc@'),
             'phone' => '12 34 56 78'
         ]);
         $adminUser->assignRole('Admin');
