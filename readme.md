@@ -29,7 +29,3 @@ Der er anvendt følgende Laravel biblioteker:
 - [tymondesigns/jwt-auth](https://github.com/tymondesigns/jwt-auth) - til håndtering af bruger autentificering. Når en bruger logger ind via API'et, så tildeles en JSON Web Token, der kan bruges til at verificere at brugeren at logget ind.
 - [spatie/laravel-permission](https://github.com/spatie/laravel-permission) - til håndtering af brugernes rettigheder. Der er opstillet to forskellige roller, "Admin" og "Customer", som brugerne kan tildeles, og hermed få rettigheder til forskellige ting.
 - [tobscure/json-api](https://github.com/tobscure/json-api) - til at opstille HTTP Reponse beskeder der følger [JSON API](http://jsonapi.org/) specifikationer.
-## Brugere
-Der kan logges ind med brugerne:
-- **Admin:** email: admin - password: admin
-- **Customer:** email: j@j.dk - password: 123
