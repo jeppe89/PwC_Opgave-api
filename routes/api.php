@@ -10,7 +10,9 @@
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
+if (env('APP_ENV') === 'prod') {
+    URL::forceSchema('https');
+}
 /*
  *  EVENT ROUTES
  */
