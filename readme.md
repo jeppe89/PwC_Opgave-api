@@ -2,7 +2,7 @@
 
 # PwC Test opgave - API
 
-API'et er bygget på PHP frameworket Laravel version 5.6, og det er opbygget efter de specifikationer, der er opstillet af [JSON API](http://jsonapi.org/).
+API'et er bygget på PHP frameworket [Laravel](https://laravel.com/) version 5.6, og det er opbygget efter de specifikationer, der er opstillet af [JSON API](http://jsonapi.org/).
 
 ## Ressourcer
 Alle API'ets ressourcer ligger på addressen /api, og følgende er tilgængelige: De der er markeret med *(JWT)* kræver en JSON Web Token når der kaldes på ressourcen, og *Admin* kræver at man har rollen admin:
@@ -21,6 +21,8 @@ GET     /users/{id}                      (JWT/Admin) - Hent informationer om en 
 POST    /users/register                              - Registrer som ny bruger
 GET     /users/{id}/events               (JWT/Admin) - Hent en brugers tilmeldte arrangementer
 GET     /users/{id}/relationships/events (JWT/Admin) - Samme som ovenfor
+POST    /auth/login                                  - Login
+POST    /auth/logout                           (JWT) - Logout
 ```
 
 ## Biblioteker
@@ -29,7 +31,3 @@ Der er anvendt følgende Laravel biblioteker:
 - [tymondesigns/jwt-auth](https://github.com/tymondesigns/jwt-auth) - til håndtering af bruger autentificering. Når en bruger logger ind via API'et, så tildeles en JSON Web Token, der kan bruges til at verificere at brugeren at logget ind.
 - [spatie/laravel-permission](https://github.com/spatie/laravel-permission) - til håndtering af brugernes rettigheder. Der er opstillet to forskellige roller, "Admin" og "Customer", som brugerne kan tildeles, og hermed få rettigheder til forskellige ting.
 - [tobscure/json-api](https://github.com/tobscure/json-api) - til at opstille HTTP Reponse beskeder der følger [JSON API](http://jsonapi.org/) specifikationer.
-## Brugere
-Der kan logges ind med brugerne:
-- **Admin:** email: admin - password: admin
-- **Customer:** email: j@j.dk - password: 123
