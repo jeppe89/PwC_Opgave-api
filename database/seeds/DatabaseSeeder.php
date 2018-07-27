@@ -82,8 +82,5 @@ class DatabaseSeeder extends Seeder
             'description' => 'Lorem ipsum',
             'date' => '2018-08-05 10:00:00'
         ]);
-
-        $user = App\User::find(1);
-        $user->events()->attach([1, 2]);
     }
 }
