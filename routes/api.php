@@ -10,9 +10,11 @@
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-/*
- *  EVENT ROUTES
- */
+
+Route::middleware('cors')->group(function () {
+    /*
+     *  EVENT ROUTES
+     */
 // Get all events
     Route::get('events', 'EventController@index')
         ->name('events.index');
@@ -90,3 +92,4 @@
     Route::post('auth/logout', 'AuthController@logout')
         ->middleware('jwt.auth');
 
+});
