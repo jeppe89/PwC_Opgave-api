@@ -10,6 +10,9 @@
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+use Illuminate\Support\Facades\URL;
+
 if (env('APP_ENV') === 'prod') {
     URL::forceSchema('https');
 }
