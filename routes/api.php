@@ -14,7 +14,7 @@
     /*
      *  EVENT ROUTES
      */
-Route::middleware(['cors'])->group(function () {
+Route::middleware('auth:api')->group(function () {
 // Get all events
     Route::get('events', 'EventController@index')
         ->name('events.index');
