@@ -16,7 +16,7 @@
      */
     // Get all events
     Route::get('events', 'EventController@index')
-        ->name('events.index')->middleware('cors');
+        ->name('events.index');
 
     // Get event
     Route::get('events/{event}', 'EventController@show')
