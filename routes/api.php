@@ -11,7 +11,7 @@
 |
 */
 
-Route::middleware(['cors'])->group(function () {
+
     /*
      *  EVENT ROUTES
      */
@@ -91,5 +91,3 @@ Route::middleware(['cors'])->group(function () {
 // Logout
     Route::post('auth/logout', 'AuthController@logout')
         ->middleware('jwt.auth');
-
-});
