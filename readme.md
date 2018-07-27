@@ -2,7 +2,7 @@
 
 # PwC Test opgave - API
 
-API'et er bygget på PHP frameworket Laravel version 5.6, og det er opbygget efter de specifikationer, der er opstillet af [JSON API](http://jsonapi.org/).
+API'et er bygget på PHP frameworket [Laravel](https://laravel.com/) version 5.6, og det er opbygget efter de specifikationer, der er opstillet af [JSON API](http://jsonapi.org/).
 
 ## Ressourcer
 Alle API'ets ressourcer ligger på addressen /api, og følgende er tilgængelige: De der er markeret med *(JWT)* kræver en JSON Web Token når der kaldes på ressourcen, og *Admin* kræver at man har rollen admin:
