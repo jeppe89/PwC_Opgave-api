@@ -11,7 +11,7 @@
 |
 */
 
-Route::middleware('cors')->group(function () {
+Route::middleware(['cors'])->group(function () {
     /*
      *  EVENT ROUTES
      */
