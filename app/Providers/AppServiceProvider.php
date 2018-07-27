@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-        if (App::environment('prod')) {
+        if (env('APP_ENV') === 'prod') {
             $this->app['request']->server->set('HTTPS', true);
         }
     }
