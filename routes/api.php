@@ -14,28 +14,27 @@
     /*
      *  EVENT ROUTES
      */
-Route::middleware('auth:api')->group(function () {
-// Get all events
+    // Get all events
     Route::get('events', 'EventController@index')
-        ->name('events.index');
+        ->name('events.index')->middleware('cors');
 
-// Get event
+    // Get event
     Route::get('events/{event}', 'EventController@show')
         ->name('events.show');
 
-// Create event
+    // Create event
     Route::post('events', 'EventController@store')
         ->middleware(['jwt.auth', 'permission:event-create']);
 
-// Edit event
+    // Edit event
     Route::patch('events/{event}', 'EventController@update')
         ->middleware(['jwt.auth', 'permission:event-edit']);
 
-// Delete event
+    // Delete event
     Route::delete('events/{event}', 'EventController@destroy')
         ->middleware(['jwt.auth', 'permission:event-delete']);
 
-// Get the subscribed users for an event
+    // Get the subscribed users for an event
     Route::middleware(['jwt.auth', 'permission:event-get-subscribers'])->group(function () {
         Route::get('events/{event}/users', 'EventController@subscribers')
             ->name('events.users');
@@ -44,7 +43,7 @@ Route::middleware('auth:api')->group(function () {
             ->name('events.relationships.users');
     });
 
-// Event subscription
+    // Event subscription
     Route::middleware(['jwt.auth', 'permission:event-subscribe'])->group(function () {
 
         // Subscribe to Event
@@ -57,21 +56,21 @@ Route::middleware('auth:api')->group(function () {
     /*
      * USER ROUTES
      */
-// Get all users
+    // Get all users
     Route::get('users', 'UserController@index')
         ->name('users.index')
         ->middleware('jwt.auth', 'permission:user-list');
 
-// Get user
+    // Get user
     Route::get('users/{user}', 'UserController@show')
         ->name('users.show')
         ->middleware('jwt.auth', 'permission:user-detail');
 
-// Register user
+    // Register user
     Route::post('users/register', 'UserController@register');
 
 
-// Get a Users Event subscriptions
+    // Get a Users Event subscriptions
     Route::middleware(['jwt.auth', 'permission:user-get-subscribed'])->group(function () {
         Route::get(
             'users/{user}/events', 'UserController@subscribed_to'
@@ -85,11 +84,10 @@ Route::middleware('auth:api')->group(function () {
     /*
      *  AUTHENTICATION ROUTES
      */
-// Login
+    // Login
     Route::post('auth/login', 'AuthController@login');
 
-// Logout
+    // Logout
     Route::post('auth/logout', 'AuthController@logout')
         ->middleware('jwt.auth');
 
-});
