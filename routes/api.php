@@ -11,8 +11,7 @@
 |
 */
 
-Route::middleware('https')->group(function () {
-    /*
+/*
  *  EVENT ROUTES
  */
 // Get all events
@@ -91,5 +90,4 @@ Route::middleware('https')->group(function () {
 // Logout
     Route::post('auth/logout', 'AuthController@logout')
         ->middleware('jwt.auth');
-});
 
