@@ -21,6 +21,8 @@ GET     /users/{id}                      (JWT/Admin) - Hent informationer om en 
 POST    /users/register                              - Registrer som ny bruger
 GET     /users/{id}/events               (JWT/Admin) - Hent en brugers tilmeldte arrangementer
 GET     /users/{id}/relationships/events (JWT/Admin) - Samme som ovenfor
+POST    /auth/login                                  - Login
+POST    /auth/logout                           (JWT) - Logout
 ```
 
 ## Biblioteker
